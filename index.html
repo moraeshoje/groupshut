@@ -138,6 +138,28 @@
             border-radius: 4px;
             font-family: 'Courier New', monospace;
         }
+        /* Botão Voltar ao Topo */
+        #scrollToTopBtn {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background: linear-gradient(135deg, #1e90ff, #005f99);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        #scrollToTopBtn:hover {
+            background: linear-gradient(135deg, #005f99, #1e90ff);
+            transform: scale(1.1);
+        }
         /* Responsividade */
         @media (max-width: 768px) {
             header {
@@ -149,6 +171,12 @@
             section, nav {
                 margin: 20px;
                 padding: 20px;
+            }
+            #scrollToTopBtn {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px;
+                font-size: 16px;
             }
         }
     </style>
@@ -250,5 +278,25 @@
     <footer>
         <p>&copy; 2024 Group Shut. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="scrollToTopBtn" title="Voltar ao topo">↑</button>
+
+    <script>
+        // Mostrar/ocultar botão baseado no scroll
+        window.onscroll = function() {
+            const btn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // Função para rolar suavemente ao topo
+        document.getElementById("scrollToTopBtn").onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
 </body>
 </html>
