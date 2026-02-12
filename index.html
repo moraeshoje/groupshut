@@ -23,7 +23,7 @@
         }
         header img {
             max-width: 100px;
-            border-radius: 50%;
+            border-radius: 8px; /* Quadrada com cantos levemente arredondados */
             margin-bottom: 15px;
             border: 3px solid #ffffff;
         }
@@ -81,6 +81,13 @@
             border-radius: 8px;
             margin: 15px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .alert a {
+            color: #d32f2f; /* Vermelho para o hiperlink */
+            text-decoration: none;
+        }
+        .alert a:hover {
+            text-decoration: underline;
         }
         footer {
             text-align: center;
@@ -149,7 +156,7 @@
 <body>
     <header>
         <div style="display: flex; align-items: center; gap: 15px; justify-content: center;">
-            <img src="20241211_023104_0000.png" alt="Logo Group Shut" style="max-width: 100px; border-radius: 50%;">
+            <img src="20241211_023104_0000.png" alt="Logo Group Shut" style="max-width: 100px; border-radius: 8px;">
             <div>
                 <h1 style="margin: 0; font-size: 1.8em;">Group Shut</h1>
                 <p style="margin: 0; font-size: 1.2em;">Guia de uso</p>
@@ -187,7 +194,7 @@
             <li>Clique no nome do bot;</li>
             <li>Clique em "Adicionar ao Grupo ou Canal";</li>
             <li>Selecione o Grupo ou canal;</li>
-            <li>Confirme em "Adicionar bot como Admin"</li>
+            <li>Confirme em "Adicionar bot como Admin".</li>
         </ul>
     </section>
     <section id="configuracoes">
@@ -202,7 +209,7 @@
         </ul>
         <div class="alert">
             <p>Apenas administradores com permissão para alterar os dados do grupo podem usar esse comando.</p>
-            <p><a href="#permissao-de-uso">Verifique a permissão de uso.</a></p>
+            <p><a href="#permissao-de-uso">Obtenha a permissão de uso.</a></p>
         </div>
     </section>
     <section id="permissoes">
@@ -223,7 +230,7 @@
     <section id="registros">
         <h2>• Registros</h2>
         <p><b>O botão de registros é usado para definir um canal que irá registrar as ações de abertura e fechamento do grupo.</b></p>
-        <p>Também será possível alterar ou remover o canal de registros a qualquer momento</p>
+        <p>Também será possível alterar ou remover o canal de registros a qualquer momento.</p>
         <div class="alert">
             O bot precisa ser administrador do canal.
         </div>
