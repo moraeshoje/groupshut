@@ -282,8 +282,8 @@
             <li><a href="#configuracoes">Configurações</a></li>
             <li><a href="#permissoes">Permissões</a></li>
             <li><a href="#registros">Registros</a></li>
-            <li><a href="#apagar">Apagar</a></li>
-            <li><a href="#Comandos">Comandos</a></li>
+            <li><a href="#apagar">Apagar mensagens</a></li>
+            <li><a href="#Comandos">Apagar comandos</a></li>
             <li><a href="#permissao-de-uso">Permissão de uso</a></li>
         </ul>
     </div>
@@ -294,12 +294,13 @@
             <li><b>Gerenciar a abertura e fechamento do grupo, removendo permissões de envio de mensagens por um único comando.</b></li>
             <li><b>Apagar mensagens indesejáveis, inclusive de administradores, enquanto o grupo estiver fechado.</b></li>
             <li><b>Definir quais administradores terão permissão para abrir e fechar o grupo.</b></li>
-            <li><b>Definir quais administradores podem enviar mensagens mesmo com o grupo fechado.</b></li>
-        </ul>
+            <li><b>Definir quais administradores poderão enviar mensagens com o grupo fechado ou terão suas mensagens apagadas.</b></li>
+            <li><b>Apagar comandos envidos no grupo, deixando-o mais limpo e organizado.</b></li>
+            <li><b>Fornecer registro detalhado da abertura e fechamento do grupo.</b></ul>
     </section>
     <section id="primeiros-passos">
         <h2>• Primeiros passos</h2>
-        <p><b>Adicione o bot como administrador no grupo com todas as permissões necessárias para seu perfeito funcionamento.</b></p>
+        <p><b>Adicione o bot como administrador no grupo com as permissões solicitadas para seu perfeito funcionamento.</b></p>
         <p>Para isso, siga os seguintes passos:</p>
         <ul>
             <li>Clique no nome do bot;</li>
@@ -313,7 +314,7 @@
     </section>
     <section id="configuracoes">
         <h2>• Configurações</h2>
-        <p><b>Todas as configurações do bot sao acessadas através do comando <code>/menu</code></b></p>
+        <p><b>Todas as configurações do bot sao acessadas através do comando <code>/menu</code>.</b></p>
         <p><b>Na tela inicial, além dos botões de configurações, você encontrará as seguintes informações:</b></p>
         <ul>
             <li><b>Estado do grupo</b> - Indica grupo aberto ou fechado.</li>
@@ -328,24 +329,32 @@
     <section id="permissoes">
         <h2>• Permissões</h2>
         <p><b>O botão de permissões é usado para definir quais administradores irão possuir permissão para abrir e fechar o grupo.</b></p>
+        <p><b>Quando clicado, irá surgir uma lista com tosos os administradores do grupo. Clicando no botão com o nome do administrador, ficará verde, indicando que ele agora tem permissão para alterar o estado do grupo.</b></p>
+        <p><b>Para remover a permissão, basta clicar novamente no botão com o nome do administrador.</b></p>
         <div class="alert">
-            Administradores com essa permissão não terão suas mensagens apagadas quando grupo estiver fechado.
+            Administradores sem permissão terão suas mensagens apagadas enquanto o grupo estiver fechado.
         </div>
     </section>
-    <section id="apagar">
-        <h2>• Apagar</h2>
-        <p><b>O botão apagar alterna a definição se o bot irá apagar ou não as mensagens dos administradores sem permissão quando o grupo estiver fechado.</b></p>
+    <section id="Apagar">
+        <h2>• Apagar Mensagens</h2>
+        <p><b>O botão mensagens definine se o bot irá apagar as mensagens dos administradores sem permissão quando o grupo estiver fechado.</b></p>
+        <p><b>Para alternar essa configuração, clique no botão. Quando verde, indica que está ativada.</b></p>
     </section>
     <section id="Comandos">
-        <h2>• Comandos</h2>
-        <p><b>O botão comandos alterna a definição se o bot irá apagar ou não os comandos enviados no grupo.</b></p>
+        <h2>• Apagar Comandos</h2>
+        <p><b>O botão comandos definine se o bot irá apagar os comandos enviados no grupo.</b></p>
+        <p><b>Para alternar essa configuração, clique no botão. quando verde, indica que está ativada.</b></p>
     </section>
     <section id="registros">
         <h2>• Registros</h2>
-        <p><b>O botão de registros é usado para definir um canal que irá registrar as ações de abertura e fechamento do grupo.</b></p>
-        <p>Também será possível alterar ou remover o canal de registros a qualquer momento.</p>
+        <p><b>O botão de registros é usado para definir, alterar ou excluir um canal que irá registrar as ações de abertura e fechamento do grupo.</b></p>
+        <ul>
+            <li><b>Adicionar canal</b> - Clique no botão, copie o comando e envie no canal. Será solicitado uma confirmação no grupo. Após a confirmação, o canal estará configurando.</li>
+            <li><b>Alterar canal</b> - Clique no botão e siga os mesmo passos descritos em 'Adicionar canal'</li>
+            <li><b>Remover canal</b> - Clique no botão e o canal será removido instantâneamente.</li>
+        </ul>
         <div class="alert">
-            O bot precisa ser administrador do canal.
+            O bot precisa ser adicionado como administrador do canal para essas configurações.
         </div>
     </section>
     <section id="permissao-de-uso">
@@ -353,7 +362,7 @@
         <p><b>Para utilizar os recursos do bot é necessário adquirir a permissão de uso.</b></p>
         <p>Isso pode ser feito através de uma doação para ajudar a manter o servidor ativo e o bot sempre atualizado.</p>
         <ul>
-            <li><b>Vitalício:</b> R$ 50,00</li>
+            <li><b>Vitalício: R$ 50,00</b></li>
         </ul>
         <p><b>Para doação, dúvidas ou sugestões, entre contato com o suporte.</b></p>
         <a href="https://t.me/GShutSupBot?start=start" class="btn">Fale com o suporte</a>
