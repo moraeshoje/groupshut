@@ -10,33 +10,103 @@
             line-height: 1.8;
             margin: 0;
             padding: 0;
+            padding-top: 80px; /* Espaço para header fixo */
             background-color: #121212; /* Fundo escuro */
             color: #ffffff; /* Texto branco */
             transition: all 0.3s ease;
         }
+        body.light {
+            background-color: #ffffff; /* Fundo claro */
+            color: #000000; /* Texto preto */
+        }
         header {
+            position: fixed;
+            top: 0;
+            width: 100%;
             background: linear-gradient(135deg, #1e90ff, #005f99); /* Gradiente azul escuro */
             color: white;
-            padding: 30px 20px;
-            text-align: center;
+            padding: 10px 20px; /* Reduzido para ~⅓ */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        header .left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         header img {
-            max-width: 100px;
-            border-radius: 8px; /* Quadrada com cantos levemente arredondados */
-            margin-bottom: 15px;
-            border: 3px solid #ffffff;
+            max-width: 60px; /* Reduzido proporcionalmente */
+            border-radius: 8px;
+            border: 2px solid #ffffff;
         }
         header h1 {
             margin: 0;
-            font-size: 2.2em;
+            font-size: 1.5em; /* Reduzido proporcionalmente */
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-            color: #ffffff; /* Branco para destacar */
+            color: #ffffff;
         }
         header p {
-            margin: 5px 0 0;
-            font-size: 1.3em;
+            margin: 0;
+            font-size: 1em; /* Reduzido proporcionalmente */
             opacity: 0.9;
+        }
+        header .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        header button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        /* Menu Lateral */
+        #sideMenu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 100%;
+            background: #1e1e1e;
+            color: #ffffff;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 999;
+            padding: 20px;
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+        }
+        body.light #sideMenu {
+            background: #ffffff;
+            color: #000000;
+        }
+        #sideMenu.open {
+            transform: translateX(0);
+        }
+        #sideMenu ul {
+            list-style: none;
+            padding: 0;
+        }
+        #sideMenu ul li {
+            margin: 15px 0;
+        }
+        #sideMenu ul li a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        #sideMenu ul li a:hover {
+            color: #1e90ff;
         }
         section {
             max-width: 900px;
@@ -47,8 +117,12 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             border: 1px solid #333;
         }
+        body.light section {
+            background: #f0f0f0;
+            color: #000000;
+        }
         h1, h2 {
-            color: #1e90ff; /* Azul claro para títulos */
+            color: #1e90ff; /* Azul permanece */
             margin-bottom: 15px;
         }
         h2 {
@@ -67,53 +141,45 @@
             position: relative;
             color: #e0e0e0;
         }
+        body.light ul li {
+            color: #333;
+        }
         ul li:before {
-            content: "•"; /* Marcador original */
+            content: "•";
             position: absolute;
             left: 0;
             color: #1e90ff;
         }
         .alert {
-            background: #333; /* Fundo escuro para alertas */
-            color: #ffcc00; /* Amarelo para destaque */
+            background: #333;
+            color: #ffcc00; /* Amarelo vira vermelho médio no tema claro */
             padding: 15px;
             border: 1px solid #555;
             border-radius: 8px;
             margin: 15px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
+        body.light .alert {
+            background: #ddd;
+            color: #d32f2f; /* Vermelho médio */
+        }
         .alert a {
-            color: #ffcc00; /* Vermelho para o hiperlink */
+            color: #ffcc00;
             text-decoration: none;
+        }
+        body.light .alert a {
+            color: #d32f2f;
         }
         .alert a:hover {
             text-decoration: underline;
         }
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 8px 25px; /* Reduzido para ~⅓ */
             background: linear-gradient(135deg, #1e90ff, #005f99);
             color: white;
             font-size: 0.9em;
             box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
-        }
-        nav {
-            margin: 30px auto;
-            max-width: 900px;
-            padding: 25px;
-            background: #1e1e1e;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid #333;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #ffcc00; /* Amarelo para os itens do índice */
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #ffffff; /* Branco no hover */
-            text-shadow: 0 0 5px #1e90ff;
         }
         .btn {
             display: inline-block;
@@ -138,9 +204,13 @@
             border-radius: 4px;
             font-family: 'Courier New', monospace;
         }
+        body.light code {
+            background: #ddd;
+            color: #d32f2f;
+        }
         /* Botão Voltar ao Topo */
         #scrollToTopBtn {
-            display: none; /* Escondido por padrão */
+            display: none;
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -151,8 +221,8 @@
             color: white;
             cursor: pointer;
             padding: 15px;
-            border-radius: 8px; /* Quadrado com cantos arredondados */
-            font-size: 24px; /* Seta mais visível */
+            border-radius: 8px;
+            font-size: 24px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
@@ -163,12 +233,15 @@
         /* Responsividade */
         @media (max-width: 768px) {
             header {
-                padding: 20px 10px;
+                padding: 8px 15px;
             }
             header h1 {
-                font-size: 1.8em;
+                font-size: 1.2em;
             }
-            section, nav {
+            header img {
+                max-width: 50px;
+            }
+            section {
                 margin: 20px;
                 padding: 20px;
             }
@@ -178,22 +251,28 @@
                 padding: 12px;
                 font-size: 20px;
             }
+            #sideMenu {
+                width: 200px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div style="display: flex; align-items: center; gap: 15px; justify-content: center;">
-            <img src="20241211_023104_0000.png" alt="Logo Group Shut" style="max-width: 100px; border-radius: 8px;">
+        <div class="left">
+            <img src="20241211_023104_0000.png" alt="Logo Group Shut">
             <div>
-                <h1 style="margin: 0; font-size: 1.8em;">Group Shut</h1>
-                <p style="margin: 0; font-size: 1.2em;">Guia de uso</p>
+                <h1>Group Shut</h1>
+                <p>Guia de uso</p>
             </div>
+        </div>
+        <div class="buttons">
+            <button id="themeToggle" title="Alternar tema">☀️</button>
+            <button id="menuToggle" title="Abrir menu">☰</button>
         </div>
     </header>
 
-    <nav>
-        <h2>Índice</h2>
+    <div id="sideMenu">
         <ul>
             <li><a href="#oque-eu-posso-fazer">O que eu posso fazer?</a></li>
             <li><a href="#primeiros-passos">Primeiros passos</a></li>
@@ -204,7 +283,8 @@
             <li><a href="#Comandos">Comandos</a></li>
             <li><a href="#permissao-de-uso">Permissão de uso</a></li>
         </ul>
-    </nav>
+    </div>
+
     <section id="oque-eu-posso-fazer">
         <h2>• O que eu posso fazer?</h2>
         <ul>
@@ -283,6 +363,22 @@
     <button id="scrollToTopBtn" title="Voltar ao topo">↑</button>
 
     <script>
+        // Toggle Menu
+        const menuToggle = document.getElementById('menuToggle');
+        const sideMenu = document.getElementById('sideMenu');
+        menuToggle.addEventListener('click', () => {
+            sideMenu.classList.toggle('open');
+            menuToggle.textContent = sideMenu.classList.contains('open') ? '✕' : '☰';
+        });
+
+        // Toggle Tema
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light');
+            themeToggle.textContent = body.classList.contains('light') ? '🌙' : '☀️';
+        });
+
         // Mostrar/ocultar botão baseado no scroll
         window.onscroll = function() {
             const btn = document.getElementById("scrollToTopBtn");
@@ -298,13 +394,15 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         };
 
-        // Rolagem suave para links do índice
-        document.querySelectorAll('nav a').forEach(anchor => {
+        // Rolagem suave para links do menu lateral
+        document.querySelectorAll('#sideMenu a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
+                    sideMenu.classList.remove('open'); // Fechar menu após clicar
+                    menuToggle.textContent = '☰';
                 }
             });
         });
