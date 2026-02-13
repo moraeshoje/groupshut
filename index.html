@@ -56,16 +56,20 @@
         header .buttons {
             display: flex;
             gap: 10px;
+            margin-right: 10px; /* Ajuste para evitar sobreposição */
         }
         header button {
             background: none;
             border: none;
-            color: white;
+            color: #000; /* Preto para ícones */
             font-size: 20px;
             cursor: pointer;
             padding: 5px;
             border-radius: 4px;
             transition: background 0.3s;
+        }
+        body.light header button {
+            color: #fff; /* Branco no tema claro */
         }
         header button:hover {
             background: rgba(255, 255, 255, 0.2);
@@ -73,10 +77,10 @@
         /* Menu Lateral */
         #sideMenu {
             position: fixed;
-            top: 0;
+            top: 80px; /* Começar após header */
             right: 0;
             width: 250px;
-            height: 100%;
+            height: calc(100% - 80px); /* Altura ajustada */
             background: #1e1e1e;
             color: #ffffff;
             transform: translateX(100%);
@@ -102,7 +106,7 @@
         #sideMenu ul li a {
             text-decoration: none;
             color: inherit;
-            font-size: 18px;
+            font-size: 16px; /* Menor para evitar quebra */
             transition: color 0.3s;
         }
         #sideMenu ul li a:hover {
@@ -221,7 +225,7 @@
             color: white;
             cursor: pointer;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 8px; /* Quadrado com bordas arredondadas */
             font-size: 24px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
@@ -360,7 +364,7 @@
     </footer>
 
     <!-- Botão Voltar ao Topo -->
-    <button id="scrollToTopBtn" title="Voltar ao topo">↑</button>
+    <button id="scrollToTopBtn" title="Voltar ao topo">⇧</button>
 
     <script>
         // Toggle Menu
@@ -409,4 +413,3 @@
     </script>
 </body>
 </html>
-
