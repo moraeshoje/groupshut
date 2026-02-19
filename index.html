@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Utilização do Bot</title>
     <style>
-        /* Impede que o navegador mostre o menu de link ao pressionar */
-        a {
-            touch-action: manipulation;
-            -webkit-touch-callout: none; /* iOS */
-            -webkit-user-select: none; /* Safari */
-            user-select: none; /* Standard */
-        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
@@ -397,12 +390,6 @@
         // Impede o menu de contexto (botão direito / pressionar e segurar)
         document.addEventListener('contextmenu', event => event.preventDefault());
 
-        // Impede o gesto de pressionar e segurar em elementos específicos
-        document.addEventListener('touchstart', function(event) {
-            if (event.target.tagName === 'A') {
-                event.preventDefault();
-            }
-        }, { passive: false });
         // Toggle Menu
         const menuToggle = document.getElementById('menuToggle');
         const sideMenu = document.getElementById('sideMenu');
